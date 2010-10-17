@@ -11,7 +11,13 @@ def abs
   end
 end
 
+class Array
+  def min
+    self.sort[0]
+  end
+end
+
 wl=(wchar=["w", "W", "Ｗ", "ｗ", "うぇっ"]).length
 
 len=(140*(gauss.abs)).to_i
-len.times{print(wchar[(gauss(0, 0.05).abs-1)*wl])}; print "\n"
+len.times{print(wchar[[(gauss(0, 0.2).abs)*wl-1, wl-1].min])}; print "\n"
