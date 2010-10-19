@@ -19,5 +19,5 @@ end
 
 wl=(wchar=["w", "W", "Ｗ", "ｗ", "うぇっ"]).length
 
-len=(140*(gauss.abs)).to_i
-len.times{print(wchar[[(gauss(0, 0.2).abs)*wl-1, wl-1].min])}; print "\n"
+len=[(gauss*140).to_i.abs, 140].min
+print(Array.new(len){wchar[[(gauss(0, 0.2).abs)*wl-1, wl-1].min]}.join[0..139]); print "\n"
